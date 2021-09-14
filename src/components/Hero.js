@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import Logo from "./Logo";
-import AnchorContext from "../store/AnchorContext";
+import DataContext from "../store/DataContext";
 
 const Hero = () => {
-  const { about, project, copyright, contact } = useContext(AnchorContext);
+  const {
+    hero: { about, project, copyright, contact, logo },
+  } = useContext(DataContext);
 
   return (
     <div className={"hero"}>
@@ -11,9 +13,9 @@ const Hero = () => {
         <p>{about}</p>
         <p>{project}</p>
       </div>
-      <div className={"hero_logo"}>
+      <h1 className={"hero_logo"} aria-label={logo}>
         <Logo />
-      </div>
+      </h1>
       <div className={"hero_bottom text-lead"}>
         <p>{copyright}</p>
         <p>{contact}</p>

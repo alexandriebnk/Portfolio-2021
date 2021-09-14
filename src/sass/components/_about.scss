@@ -1,0 +1,69 @@
+.about {
+    background-color: rgba(216, 112, 147, 0.488);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 139.6rem;
+    margin: -7rem auto 0 auto;
+    padding: 0 10rem;
+
+    @include respondTo(tablet) {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @include respondTo(mobile) {
+        margin: 3rem auto 0 auto;
+        padding: 0 6rem 0 6rem;
+    }
+
+    &_wrapper {
+        height: 50rem;
+        width: 32%;
+        margin-right: 4rem;
+
+        @include respondTo(tablet) {
+            width: 60%;
+            margin-right: 0;
+        }
+
+        @include respondTo(mobile) {
+            height: 30rem;
+            width: 100%;
+        }
+    }
+
+    &_image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &_presentation {
+        width: 32%;
+
+        @include respondTo(tablet) {
+            width: 60%;
+        }
+
+        @include respondTo(mobile) {
+            width: 100%;
+        }
+    }
+}
+
+.presentation {
+
+    &_heading {
+        border-bottom: 1px solid $fonts;
+        line-height: 7rem;
+    }
+
+    &_content {
+        margin-top: 2rem;
+        line-height: 1.7rem;
+    }
+}
