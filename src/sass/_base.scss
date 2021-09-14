@@ -1,0 +1,49 @@
+@font-face {
+	font-family: "Migra";
+	src: url("../fonts/Migra-Light.woff") format("woff"),
+       url("../fonts/Migra-Light.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("../fonts/OpenSans-Regular.woff") format("woff"),
+       url("../fonts/OpenSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+$fontMigra: "Migra";
+$fontOpenSans: "Open Sans";
+
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, 
+::placeholder {
+  font-size: 62.5%; /*1rem = 10px*/
+}
+
+body {
+  background-color: $background;
+}
+
+select {
+  background-color: white;
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+#app {
+  position: relative;
+  overflow: hidden;
+}
