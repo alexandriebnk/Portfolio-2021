@@ -1,8 +1,58 @@
 .contact {
-    background-color: skyblue;
-    height: 100vh;
+    position: relative;
     width: 100%;
-    max-height: 90rem;
-    max-width: 139.6rem;
-    margin: auto;
+    max-width: 54rem;
+    margin: 20rem auto;
+
+    &_number {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 65rem;
+        line-height: 65rem;
+        color: rgba($fonts, .05);
+        font-size: 90rem;
+        letter-spacing: -11rem;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    &_informations {
+        position: relative;
+        z-index: 10;
+    }
+
+    &_title {
+        position: relative;
+        height: 13rem;
+        margin-bottom: 5rem;
+    }
+
+    &_year {
+        position: absolute;
+        bottom: -15rem;
+        right: 0;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $fonts;
+    }
+
+    &_content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &_form {
+        width: 50%;
+    }
+
+    &_network {
+        width: 39%;
+    }
 }
+
+
+

@@ -3,11 +3,13 @@
 .title-h1 {
     font-size: 20rem;
     font-family: $fontMigra;
+    font-weight: normal;
 }
 
 .title-h2 {
     font-size: 12.5rem;
     font-family: $fontMigra;
+    font-weight: normal;
 
     @include respondTo(tablet) {
         font-size: 10rem;
@@ -22,6 +24,7 @@
     font-size: 5rem;
     font-family: $fontMigra;
     text-transform: uppercase;
+    font-weight: normal;
 
     @include respondTo(tablet) {
         font-size: 4rem;
@@ -36,6 +39,7 @@
     font-size: 3.2rem;
     font-family: $fontMigra;
     text-transform: uppercase;
+    font-weight: normal;
 
     @include respondTo(tablet) {
         font-size: 3.2rem;
@@ -56,6 +60,7 @@
     font-size: 1.2rem;
     font-family: $fontOpenSans;
     text-align: justify;
+    line-height: 1.7rem;
 }
 
 

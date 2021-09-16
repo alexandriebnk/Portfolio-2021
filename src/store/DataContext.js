@@ -10,7 +10,7 @@ const DataContext = React.createContext({
   },
   about: {
     image: {
-      src: "http://localhost:3000/image/img.jpg",
+      src: "/image/img.jpg",
       alt: "Photo de profil",
     },
     presentation: {
@@ -20,21 +20,24 @@ const DataContext = React.createContext({
     },
   },
   contact: {
-    title: {
-      heading: "Contact",
-      year: "2021",
-    },
-    form: {
-      name: "Name",
-      email: "Email",
-      message: "Message",
-      bouton: "Envoyer",
-    },
-    network: {
-      note: "Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire.",
-      email: { title1: "Email", email: "alexandrie.be@gmail.com" },
-      instagram: { title2: "Instagram", instagram: "alexandriebnk" },
-      linkedIn: { title3: "LinkedIn", linkedIn: "Alexandrie Benkiki" },
+    design: { number: "21" },
+    informations: {
+      title: {
+        heading: "Contact",
+        year: "2021",
+      },
+      form: {
+        name: "Name",
+        email: "Email",
+        message: "Message",
+        bouton: "Envoyer",
+      },
+      network: {
+        note: "Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire.",
+        email: "mailto:alexandrie.be@gmail.com",
+        instagram: "https://www.instagram.com/alexandriebnk/?hl=fr",
+        linkedIn: "https://www.linkedin.com/in/alexandrie-benkiki/",
+      },
     },
   },
 });

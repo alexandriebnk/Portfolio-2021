@@ -21,8 +21,7 @@ $fontOpenSans: "Open Sans";
   box-sizing: border-box;
 }
 
-html, 
-::placeholder {
+html {
   font-size: 62.5%; /*1rem = 10px*/
 }
 
@@ -30,20 +29,3 @@ body {
   background-color: $background;
 }
 
-select {
-  background-color: white;
-  appearance: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-input:focus {
-  border: none;
-  outline: none;
-}
-
-#app {
-  position: relative;
-  overflow: hidden;
-}

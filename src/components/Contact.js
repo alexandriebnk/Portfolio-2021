@@ -6,28 +6,27 @@ import DataContext from "../store/DataContext";
 const Contact = () => {
   const {
     contact: {
-      title: { heading, year },
-      form,
-      network,
+      design: { number },
+      informations: {
+        title: { heading, year },
+      },
     },
   } = useContext(DataContext);
 
   return (
     <div className={"contact"}>
-      <div className={"contact_wrapper"}>
-        <div className={"wrapper_design"}></div>
-        <div className={"wrapper_informations"}>
-          <div className={"contact_title"}>
-            <h2>{heading}</h2>
-            <p>{year}</p>
+      <p className={"contact_number"}>{number}</p>
+      <div className={"contact_informations"}>
+        <div className={"contact_title"}>
+          <h2 className={"title-h2 contact_heading"}>{heading}</h2>
+          <p className={"title-h2 contact_year"}>{year}</p>
+        </div>
+        <div className={"contact_content"}>
+          <div className={"contact_form"}>
+            <Form />
           </div>
-          <div className={"contact_content"}>
-            <div className={"contact_form"}>
-              <Form form={form} />
-            </div>
-            <div className={"contact_network"}>
-              <Network />
-            </div>
+          <div className={"contact_network body-text"}>
+            <Network />
           </div>
         </div>
       </div>
