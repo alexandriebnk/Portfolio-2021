@@ -1,20 +1,16 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import gsap from "gsap";
 import ConfirmButton from "./ConfirmButton";
-import DataContext from "../store/DataContext";
+import Context from "../store/Context";
 
 const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
+
   const button = useRef();
-  const {
-    contact: {
-      informations: {
-        form: { name: nameUser, email: emailUser, message },
-      },
-    },
-  } = useContext(DataContext);
+
+  const data = useContext(Context);
 
   // eslint-disable-next-line
   const regExName = /^[A-Za-zàäâéèëêïîôùüÿçœ\'-]{2,}/;
@@ -55,7 +51,10 @@ const Form = () => {
 
   useEffect(() => {
     if (name && email && text) {
-      gsap.set(button.current, { opacity: "1", pointerEvents: "all" });
+      gsap.set(button.current, {
+        opacity: "1",
+        pointerEvents: "all",
+      });
     } else {
       gsap.set(button.current, { opacity: ".3", pointerEvents: "none" });
     }
@@ -64,24 +63,24 @@ const Form = () => {
   return (
     <form className={"form"}>
       <input
-        className={"form_name body-text"}
+        className={"form_name text-lead"}
         type="text"
-        placeholder={nameUser}
+        placeholder={data?.contact.informations.form.name}
         onChange={onNameChange}
       />
       <input
-        className={"form_email body-text"}
+        className={"form_email text-lead"}
         type="email"
-        placeholder={emailUser}
+        placeholder={data?.contact.informations.form.email}
         onChange={onEmailChange}
       />
       <textarea
         className={"form_text body-text"}
-        placeholder={message}
+        placeholder={data?.contact.informations.form.message}
         onChange={onTextChange}
         rows="7"
       ></textarea>
-      <div className={"form_btn"} ref={button}>
+      <div ref={button}>
         <ConfirmButton />
       </div>
     </form>

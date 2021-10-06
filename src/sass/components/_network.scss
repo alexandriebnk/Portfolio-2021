@@ -9,6 +9,13 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
+
+        @include respondTo(mobile) {
+            width: 60%;
+            flex-direction: row;
+            align-items: center;
+            margin: 0 auto 2rem auto;
+        }
     }
 }
 

@@ -1,5 +1,4 @@
 .about {
-    background-color: rgba(216, 112, 147, 0.488);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -17,12 +16,13 @@
 
     @include respondTo(mobile) {
         margin: 3rem auto 0 auto;
-        padding: 0 6rem 0 6rem;
+        padding: 0 6rem;
     }
 
-    &_wrapper {
+    &_container {
+        position: relative;
         height: 50rem;
-        width: 32%;
+        width: 33%;
         margin-right: 4rem;
 
         @include respondTo(tablet) {
@@ -37,13 +37,16 @@
     }
 
     &_image {
+        position: absolute;
+        top: 0;
+        left: 0;
         height: 100%;
         width: 100%;
         object-fit: cover;
     }
 
     &_presentation {
-        width: 32%;
+        width: 33%;
 
         @include respondTo(tablet) {
             width: 60%;

@@ -1,0 +1,17 @@
+.projects_list {
+    width: 100%;
+    max-width: 139.6rem;
+    margin: 10rem auto;
+    padding: 0 10rem;
+    list-style-type: none;
+
+    @include respondTo(tablet) {
+        margin: 5rem auto;
+    }
+
+    @include respondTo(mobile) {
+        margin: 1rem auto 5rem auto;
+        padding: 0 6rem;
+    }
+}
+

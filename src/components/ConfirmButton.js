@@ -1,16 +1,14 @@
 import React, { useContext } from "react";
-import DataContext from "../store/DataContext";
+import Context from "../store/Context";
 
 const ConfirmButton = () => {
-  const {
-    contact: {
-      informations: {
-        form: { bouton },
-      },
-    },
-  } = useContext(DataContext);
+  const data = useContext(Context);
 
-  return <button className={"confirmButton text-lead"}>{bouton}</button>;
+  return (
+    <button className={"confirmButton cursor-pointer text-lead"}>
+      {data?.contact.informations.form.button}
+    </button>
+  );
 };
 
 export default ConfirmButton;

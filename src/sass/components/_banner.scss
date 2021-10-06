@@ -1,0 +1,45 @@
+.banner {
+    display: flex;
+    flex-direction: row;
+    height: 20rem;
+    width: 100%;
+    max-width: 139.6rem;
+    margin: 7rem auto 0 auto;
+    overflow: hidden;
+    user-select: none;
+
+    @include respondTo(tablet) {
+        margin-top: 5rem;
+    }
+
+    @include respondTo(mobile) {
+        margin-top: 0;
+    }
+
+    &_content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+    }
+
+    &_arrow {
+        height: 100%;
+        transform: rotate(90deg);
+        margin-top: 3rem;
+
+        @include respondTo(mobile) {
+            margin-top: 1rem;
+        }
+        
+        svg {
+            display: block;
+            transform: scale(.7);
+
+            @include respondTo(mobile) {
+                transform: scale(.4);
+            }
+        }
+    }
+}

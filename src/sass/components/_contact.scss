@@ -4,6 +4,16 @@
     max-width: 54rem;
     margin: 20rem auto;
 
+    @include respondTo(tablet) {
+        width: 45%;
+        margin: 15rem auto;
+    }
+
+    @include respondTo(mobile) {
+        width: 70%;
+        margin: 5rem auto;
+    }
+
     &_number {
         position: absolute;
         top: 50%;
@@ -16,6 +26,21 @@
         letter-spacing: -11rem;
         z-index: 0;
         overflow: hidden;
+        user-select: none;
+
+        @include respondTo(tablet) {
+            height: 60rem;
+            line-height: 60rem;
+            font-size: 80rem;
+        }
+
+        @include respondTo(mobile) {
+            height: 50rem;
+            line-height: 50rem;
+            font-size: 53rem;
+            overflow: unset;
+            margin-left: -3rem;
+        }
     }
 
     &_informations {
@@ -27,6 +52,10 @@
         position: relative;
         height: 13rem;
         margin-bottom: 5rem;
+
+        @include respondTo(mobile) {
+            height: 8rem;
+        }
     }
 
     &_year {
@@ -36,6 +65,14 @@
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: $fonts;
+
+        @include respondTo(tablet) {
+            bottom: -10rem;
+        }
+
+        @include respondTo(mobile) {
+            bottom: -5.5rem;
+        }
     }
 
     &_content {
@@ -43,14 +80,33 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-end;
+
+        @include respondTo(mobile) {
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 
     &_form {
         width: 50%;
+
+        @include respondTo(tablet) {
+            width: 40%;
+        }
+
+        @include respondTo(mobile) {
+            width: 100%;
+        }
     }
 
     &_network {
         width: 39%;
+
+        @include respondTo(mobile) {
+            margin: 2.5rem auto;
+            width: 100%;
+        }
     }
 }
 

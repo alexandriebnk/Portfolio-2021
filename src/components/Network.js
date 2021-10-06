@@ -1,21 +1,23 @@
 import React, { useContext } from "react";
-import DataContext from "../store/DataContext";
+import Context from "../store/Context";
 
 const Network = () => {
-  const {
-    contact: {
-      informations: {
-        network: { note, email, instagram, linkedIn },
-      },
-    },
-  } = useContext(DataContext);
+  const data = useContext(Context);
 
   return (
     <div className={"network"}>
-      <p className={"network_note"}>{note}</p>
+      <p
+        className={"network_note"}
+        dangerouslySetInnerHTML={{
+          __html: data?.contact.informations.network.note.replace(
+            /\n/g,
+            "<br>"
+          ),
+        }}
+      ></p>
       <div className={"network_content"}>
         <a
-          href={email}
+          href={data?.contact.informations.network.email}
           target="_blank"
           rel="noopener noreferrer"
           className={"content_email text-body"}
@@ -23,7 +25,7 @@ const Network = () => {
           Email
         </a>
         <a
-          href={instagram}
+          href={data?.contact.informations.network.instagram}
           target="_blank"
           rel="noopener noreferrer"
           className={"content_instagram text-body"}
@@ -31,7 +33,7 @@ const Network = () => {
           Instagram
         </a>
         <a
-          href={linkedIn}
+          href={data?.contact.informations.network.linkedIn}
           target="_blank"
           rel="noopener noreferrer"
           className={"content_linkedin text-body"}

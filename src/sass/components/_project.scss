@@ -1,0 +1,81 @@
+.project {
+    border-top: 1px solid $fonts;
+
+    &:last-child {
+        border-bottom: 1px solid $fonts;
+    }
+
+    &_link {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-decoration: none;
+        color: inherit;
+        overflow: hidden;
+        padding: 2rem 0;
+    
+        &:hover {
+            cursor: pointer;
+        }
+    
+        @include respondTo(mobile) {
+            flex-direction: column;
+            padding: 3rem 0;
+        }
+    
+        
+    }
+    
+    &_heading {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: -7rem;
+
+        @include respondTo(mobile) {
+            margin-left: 0;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &_eye {
+        display: block; 
+        color: $hover;
+        
+        svg {
+            display: block;
+            transform: scale(.4);
+        }
+
+        @include respondTo(mobile) {
+            display: none;
+        }
+    }
+
+    &_content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 20rem;
+        overflow: hidden;
+    }
+
+    &_arrow {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-100%, -50%);
+        color: $hover;
+        
+        svg {
+            display: block;
+            transform: scale(.7);
+        }
+
+        @include respondTo(mobile) {
+            display: none;
+        }
+    } 
+}
+
+

@@ -3,8 +3,12 @@
 @import 'mixins';
 @import 'typography';
 
+@import 'components/loader';
 @import 'components/hero';
 @import 'components/about';
+@import 'components/banner';
+@import 'components/project';
+@import 'components/projectsList';
 @import 'components/contact';
 @import 'components/form';
 @import 'components/confirmButton';
