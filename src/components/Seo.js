@@ -8,20 +8,28 @@ const Seo = () => {
   return (
     <Helmet>
       <html lang="fr" />
-      <title>{data?.seo.title}</title>
+      <title>
+        {"Alexandrie Benkiki - Développeur Front-End" || data?.seo.title}
+      </title>
       <meta name="author" content={data?.seo.author} />
       <meta name="description" content={data?.seo.description} />
 
       <meta property="og:url" content={"http://www.alexandriebenkiki.com"} />
       <meta property="og:title" content={data?.seo.title} />
       <meta name="og:description" content={data?.seo.description} />
-      <meta property="og:image" content={"http://www.alexandriebenkiki.com"} />
+      <meta
+        property="og:image"
+        content={"http://www.alexandriebenkiki.com/og.png"}
+      />
 
       <meta name="twitter:description" content={data?.seo.description} />
       <meta name="twitter:title" content={data?.seo.title} />
       <meta name="twitter:creator" content={data?.seo.author} />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:image" content={"http://www.alexandriebenkiki.com"} />
+      <meta
+        name="twitter:image"
+        content={"http://www.alexandriebenkiki.com/og.png"}
+      />
     </Helmet>
   );
 };

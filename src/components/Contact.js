@@ -11,7 +11,7 @@ const Contact = () => {
       <p className={"contact_number"}>{data?.contact.number}</p>
       <div className={"contact_informations"}>
         <div className={"contact_title"}>
-          <h2 className={"contact_heading title-h2"}>
+          <h2 className={"title-h2"}>
             {data?.contact.informations.title.heading}
           </h2>
           <h2 className={"contact_year title-h2"}>

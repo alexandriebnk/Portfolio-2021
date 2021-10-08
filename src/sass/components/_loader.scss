@@ -8,18 +8,12 @@
     z-index: 3000;
 
     &_line {
-        border-top: 1px solid $fonts;
+        background-color: #E1AE5B;
+        //border-top: 1px solid $fonts;
         position: absolute;
-        top: 50.5%;
+        top: 0;
         left: 0;
-        transform: translateY(-50%);
-
-        @include respondTo(tablet) {
-            top: 44%;
-        }
-
-        @include respondTo(mobile) {
-            top: 17%;
-        }
+        height: 0;
+        width: 100vw;
     }
 }

@@ -52,14 +52,14 @@ const Project = ({ name, description, link }) => {
           <div className={"project_eye"}>
             <Eye />
           </div>
-          <h3 className={"project_name title-h3"}>{name}</h3>
+          <h3 className={"title-h3"}>{name}</h3>
         </div>
         <div className={"project_content"}>
           <div className={"project_arrow"} ref={arrow}>
             <Arrow />
           </div>
           <p
-            className={"project_description body-text"}
+            className={"body-text"}
             ref={descriptionProject}
             dangerouslySetInnerHTML={{
               __html: description.replace(/\n/g, "<br>"),

@@ -21,9 +21,7 @@
         @include respondTo(mobile) {
             flex-direction: column;
             padding: 3rem 0;
-        }
-    
-        
+        } 
     }
     
     &_heading {

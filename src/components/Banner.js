@@ -17,7 +17,7 @@ const Banner = () => {
             ref={content}
             key={`banner-el-${index}`}
           >
-            <h2 className={"banner_projects title-h2"}>{data?.hero.project}</h2>
+            <h2 className={"title-h2"}>{data?.hero.project}</h2>
             <div className={"banner_arrow"}>
               <Arrow />
             </div>

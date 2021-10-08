@@ -15,22 +15,28 @@ const Loader = ({ loaded }) => {
   }, [loaded, animationInDone]);
 
   const animateIn = () => {
-    gsap.fromTo(
-      loaderLine.current,
-      { width: "0" },
-      {
-        duration: "1",
-        width: "40%",
-        onComplete: () => setAnimationInDone(true),
-      }
-    );
+    const timeline = new gsap.timeline();
+    timeline.to(loaderLine.current, {
+      duration: "1",
+      height: "100%",
+      ease: "power4.inOut",
+      onUpdate: () => {
+        timeline.progress() >= 0.8 && setAnimationInDone(true);
+      },
+    });
   };
 
   const animateOut = () => {
     const timeline = new gsap.timeline();
     timeline
-      .to(loaderLine.current, { duration: "1", width: "165px", left: "27%" })
-      .to(loaderRef.current, { duration: ".5", autoAlpha: "0" })
+      .set(loaderRef.current, { backgroundColor: "transparent" })
+      .to(loaderLine.current, {
+        duration: ".8",
+        height: "0",
+        top: "100%",
+        ease: "power4.in",
+      })
+      .set(loaderRef.current, { autoAlpha: "0" })
       .set("body", { overflow: "auto" });
   };
 
