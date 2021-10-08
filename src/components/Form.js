@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import gsap from "gsap";
-import ConfirmButton from "./ConfirmButton";
+import { send } from "emailjs-com";
 import Context from "../store/Context";
 
 const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [text, setText] = useState("");
+  const [message, setMessage] = useState("");
 
+  const form = useRef();
   const button = useRef();
 
   const data = useContext(Context);
@@ -17,7 +18,21 @@ const Form = () => {
   // eslint-disable-next-line
   const regExEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   // eslint-disable-next-line
-  const regExText = /^[a-zA-Z0-9.,\s]*$/;
+  const regExMessage = /^[a-zA-Z0-9.,\s]*$/;
+
+  const resetInput = () => {
+    form.current.reset();
+    setName(null);
+    setEmail(null);
+    setMessage(null);
+    setTimeout(() => {
+      resetButton();
+    }, 3000);
+  };
+
+  const resetButton = () => {
+    button.current.innerHTML = data?.contact.informations.form.defaultButton;
+  };
 
   const onNameChange = (e) => {
     if (regExName.test(e.target.value)) {
@@ -39,18 +54,48 @@ const Form = () => {
     }
   };
 
-  const onTextChange = (e) => {
-    if (regExText.test(e.target.value)) {
-      setText(e.target.value);
+  const onMessageChange = (e) => {
+    if (regExMessage.test(e.target.value)) {
+      setMessage(e.target.value);
       gsap.to(e.target, { color: "#1A150C" });
     } else {
-      setText(null);
+      setMessage(null);
       gsap.to(e.target, { color: "#D25711" });
     }
   };
 
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    button.current.innerHTML = data?.contact.informations.form.processingButton;
+
+    const toSend = {
+      name,
+      email,
+      message,
+    };
+
+    try {
+      const response = await send(
+        process.env.REACT_APP_EMAIL_JS_SERVICE_ID,
+        process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID,
+        toSend,
+        process.env.REACT_APP_EMAIL_JS_USER_ID
+      );
+      if (response.status === 200) {
+        button.current.innerHTML =
+          data?.contact.informations.form.successButton;
+
+        resetInput();
+      }
+    } catch (error) {
+      button.current.innerHTML = data?.contact.informations.form.failButton;
+      resetInput();
+    }
+  };
+
   useEffect(() => {
-    if (name && email && text) {
+    if (name && email && message) {
       gsap.set(button.current, {
         opacity: "1",
         pointerEvents: "all",
@@ -58,10 +103,10 @@ const Form = () => {
     } else {
       gsap.set(button.current, { opacity: ".3", pointerEvents: "none" });
     }
-  }, [name, email, text]);
+  }, [name, email, message]);
 
   return (
-    <form className={"form"}>
+    <form className={"form"} onSubmit={onSubmit} ref={form}>
       <input
         className={"form_name text-lead"}
         type="text"
@@ -75,14 +120,18 @@ const Form = () => {
         onChange={onEmailChange}
       />
       <textarea
-        className={"form_text body-text"}
+        className={"form_message body-text"}
         placeholder={data?.contact.informations.form.message}
-        onChange={onTextChange}
+        onChange={onMessageChange}
         rows="7"
       ></textarea>
-      <div ref={button}>
-        <ConfirmButton />
-      </div>
+      <button
+        type="submit"
+        className={"form_button cursor-pointer text-lead"}
+        ref={button}
+      >
+        {data?.contact.informations.form.defaultButton}
+      </button>
     </form>
   );
 };

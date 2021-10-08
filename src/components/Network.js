@@ -17,9 +17,7 @@ const Network = () => {
       ></p>
       <div className={"network_content"}>
         <a
-          href={data?.contact.informations.network.email}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={`mailto:${data?.contact.informations.network.email}`}
           className={"content_email text-body"}
         >
           Email

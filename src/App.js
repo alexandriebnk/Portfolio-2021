@@ -98,7 +98,10 @@ function App() {
               name: contactData.contact_form_name,
               email: contactData.contact_form_email,
               message: contactData.contact_form_message,
-              button: contactData.contact_form_button,
+              defaultButton: contactData.contact_form_button_default,
+              processingButton: contactData.contact_form_button_processing,
+              successButton: contactData.contact_form_button_success,
+              failButton: contactData.contact_form_button_fail,
             },
             network: {
               note: contactData.contact_network_note,
