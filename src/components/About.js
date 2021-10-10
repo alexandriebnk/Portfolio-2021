@@ -9,7 +9,7 @@ const About = () => {
       <div className={"about_container"}>
         <img
           src={data?.about.image.src}
-          alt={data?.about.image.alt}
+          alt={"Alexandrie Benkiki" || data?.about.image.alt}
           className={"about_image"}
         />
       </div>
