@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
+import Bowser from "bowser";
 import Eye from "./Eye";
 import Arrow from "./Arrow";
 
@@ -8,7 +9,13 @@ const Project = ({ name, description, link }) => {
   const arrow = useRef();
   const descriptionProject = useRef();
 
+  const {
+    platform: { type },
+  } = Bowser.parse(window.navigator.userAgent);
+
   const showAssets = () => {
+    if (type === "mobile" || type === "tablet") return;
+
     gsap.fromTo(
       titleEye.current,
       { marginLeft: "-7rem" },
@@ -23,6 +30,8 @@ const Project = ({ name, description, link }) => {
   };
 
   const hideAssets = () => {
+    if (type === "mobile" || type === "tablet") return;
+
     gsap.fromTo(
       titleEye.current,
       { marginLeft: "0" },

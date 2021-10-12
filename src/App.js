@@ -106,8 +106,8 @@ function App() {
             network: {
               note: contactData.contact_network_note,
               email: contactData.contact_network_email,
-              instagram: contactData.contact_network_instagram,
-              linkedIn: contactData.contact_network_linkedin,
+              instagram: contactData.contact_network_instagram.url,
+              linkedIn: contactData.contact_network_linkedin.url,
             },
           },
         },
