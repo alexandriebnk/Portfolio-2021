@@ -17,6 +17,14 @@ const Network = () => {
       ></p>
       <div className={"network_content"}>
         <a
+          href={data?.contact.informations.network.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={"content_linkedin text-body"}
+        >
+          Github
+        </a>
+        <a
           href={`mailto:${data?.contact.informations.network.email}`}
           className={"content_email text-body"}
         >

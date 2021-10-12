@@ -105,6 +105,7 @@ function App() {
             },
             network: {
               note: contactData.contact_network_note,
+              github: contactData.contact_network_github.url,
               email: contactData.contact_network_email,
               instagram: contactData.contact_network_instagram.url,
               linkedIn: contactData.contact_network_linkedin.url,
