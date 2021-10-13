@@ -11,7 +11,7 @@
         align-items: flex-start;
 
         @include respondTo(mobile) {
-            width: 60%;
+            width: 100%;
             flex-direction: row;
             align-items: center;
             margin: 0 auto 2rem auto;

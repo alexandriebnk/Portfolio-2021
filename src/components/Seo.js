@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import Helmet from "react-helmet";
-import Context from "../store/Context";
 
 const Seo = () => {
-  const data = useContext(Context);
-
   return (
     <Helmet>
       <html lang="fr" />
