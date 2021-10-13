@@ -9,8 +9,11 @@ import Banner from "./components/Banner";
 import ProjectsList from "./components/ProjectsList";
 import Contact from "./components/Contact";
 import Context from "./store/Context";
+import useGaTracker from "./useGaTracker";
 
 function App() {
+  useGaTracker();
+
   const [data, setData] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
