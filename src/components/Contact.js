@@ -8,7 +8,9 @@ const Contact = () => {
 
   return (
     <div className={"contact"} id="contact">
-      <p className={"contact_number"}>{data?.contact.number}</p>
+      <p className={"contact_number"}>
+        <span>{data?.contact.number}</span>
+      </p>
       <div className={"contact_informations"}>
         <div className={"contact_title"}>
           <h2 className={"title-h2"}>
