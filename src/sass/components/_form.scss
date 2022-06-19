@@ -1,47 +1,47 @@
 ::placeholder {
-    font-size: 1.4rem;
-    font-family: $fontOpenSans;
-    text-transform: uppercase;
-    color: $fonts;
-  }
-
-.form {
-    width: 100%;
-
-    &_name, 
-    &_email,
-    &_message {
-        background-color: transparent;
-        width: 100%;
-        border: none;
-        border-bottom: 1px solid $fonts;
-        border-radius: 0;
-
-        &:focus {
-            outline: none;
-            border: none;
-            border-bottom: 1px solid $fonts !important;
-        }
-    }
-
-    &_name, 
-    &_email {
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-    }
-
-    &_message {
-        resize: none;
-        text-transform: lowercase;
-    }
-
-    &_button {
-        width: 100%;
-    background-color: transparent;
-    border: 1px solid $fonts;
-    padding: .5rem 0;
-    margin-top: 1.5rem;
-    margin-bottom: .3rem;
-    }
+  font-size: 1.4rem;
+  font-family: $fontOpenSans;
+  text-transform: uppercase;
+  color: $fonts;
 }
 
+.form {
+  width: 100%;
+
+  &_name,
+  &_email,
+  &_message {
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $fonts;
+    border-radius: 0;
+
+    &:focus {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $fonts !important;
+    }
+  }
+
+  &_name,
+  &_email {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &_message {
+    resize: none;
+    text-transform: lowercase;
+  }
+
+  &_button {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid $fonts;
+    color: $fonts;
+    padding: 0.5rem 0;
+    margin-top: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+}
